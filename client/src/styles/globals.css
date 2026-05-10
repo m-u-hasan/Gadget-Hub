@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS with a Modern Tech Theme (Blue + Dark) */
+
+:root {
+  --primary-blue: #3b82f6;
+  --dark-bg: #020617;
+  --card-bg: #0f172a;
+  --text-main: #f8fafc;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+.tech-card {
+  background-color: var(--card-bg);
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}

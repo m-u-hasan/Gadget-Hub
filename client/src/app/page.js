@@ -7,7 +7,7 @@ export default function HomePage() {
       {/* Hero Section (SRS 3.1) */}
       <section className="text-center py-20 bg-gradient-to-b from-blue-900/20 to-transparent rounded-3xl">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
-          Upgrade Your <span className="text-blue-500">Tech Game</span>
+          UPGRADE YOUR <span className="text-blue-500">GADGET</span>
         </h1>
         <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-10">
           Explore the latest smartphones, high-performance laptops, and premium accessories with advanced spec-based filtering.

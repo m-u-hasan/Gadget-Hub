@@ -1,7 +1,16 @@
 import axios from 'axios';
 
+const getBaseURL = () => {
+  const url = process.env.NEXT_PUBLIC_API_BASE_URL;
+  console.log('API Base URL Configured as:', url);
+  if (!url) return 'http://localhost:5000/api';
+  const finalURL = url.endsWith('/api') ? url : `${url}/api`;
+  console.log('Final API Endpoint:', finalURL);
+  return finalURL;
+};
+
 const API = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  baseURL: getBaseURL(),
 });
 
 // Add a request interceptor to include the token in all requests

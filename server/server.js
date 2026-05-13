@@ -16,9 +16,9 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(express.json()); // Allows the server to accept JSON data in the body
+app.use(express.json()); 
 app.use(cors({
-  origin: process.env.FRONTEND_URL, 
+  origin: [process.env.FRONTEND_URL, 'http://localhost:3000'].filter(Boolean),
   credentials: true,
 })); 
 

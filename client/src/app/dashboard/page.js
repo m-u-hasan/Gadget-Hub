@@ -143,7 +143,7 @@ export default function DashboardPage() {
                       <div className="flex items-center gap-8">
                         <div className="text-right hidden sm:block">
                           <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">Total Amount</p>
-                          <p className="text-lg font-black text-white">${order.totalPrice.toLocaleString()}</p>
+                          <p className="text-lg font-black text-white">৳{order.totalPrice.toLocaleString()}</p>
                         </div>
                         <div className={`px-4 py-2 rounded-full border text-xs font-black uppercase tracking-tighter ${getStatusColor(order.status)}`}>
                           {order.status}

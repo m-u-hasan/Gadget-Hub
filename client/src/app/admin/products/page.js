@@ -138,7 +138,7 @@ export default function AdminProducts() {
                     </div>
                   </td>
                   <td className="px-6 py-4 font-black text-white">
-                    ${p.price.toLocaleString()}
+                    ৳{p.price.toLocaleString()}
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2">
@@ -194,7 +194,7 @@ export default function AdminProducts() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Price ($)</label>
+                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Price (৳)</label>
                     <input type="number" required className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-white focus:border-blue-500 outline-none" 
                       value={formData.price} onChange={e => setFormData({...formData, price: Number(e.target.value)})} />
                   </div>

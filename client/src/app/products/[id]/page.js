@@ -101,7 +101,7 @@ export default function ProductDetailsPage() {
           </p>
 
           <div className="text-4xl font-bold text-white">
-            ${product.price.toLocaleString()}
+            ৳{product.price.toLocaleString()}
           </div>
 
           {/* Action Buttons (SRS 3.3) */}

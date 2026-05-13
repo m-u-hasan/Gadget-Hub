@@ -38,7 +38,7 @@ export default function CartPage() {
               <div className="flex-grow space-y-1">
                 <h3 className="font-bold text-lg">{item.name}</h3>
                 <p className="text-sm text-slate-400">{item.brand}</p>
-                <p className="text-blue-500 font-bold">${item.price.toLocaleString()}</p>
+                <p className="text-blue-500 font-bold">৳{item.price.toLocaleString()}</p>
               </div>
 
               <div className="flex items-center gap-3 bg-slate-900 rounded-lg p-1">
@@ -74,7 +74,7 @@ export default function CartPage() {
             
             <div className="flex justify-between text-slate-400">
               <span>Subtotal</span>
-              <span className="text-white">${totalPrice.toLocaleString()}</span>
+              <span className="text-white">৳{totalPrice.toLocaleString()}</span>
             </div>
             
             <div className="flex justify-between text-slate-400">
@@ -84,7 +84,7 @@ export default function CartPage() {
 
             <div className="border-t border-slate-800 pt-4 flex justify-between text-xl font-bold">
               <span>Total</span>
-              <span className="text-blue-500">${totalPrice.toLocaleString()}</span>
+              <span className="text-blue-500">৳{totalPrice.toLocaleString()}</span>
             </div>
 
             <Link 

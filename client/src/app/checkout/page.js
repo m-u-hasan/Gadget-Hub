@@ -128,7 +128,7 @@ export default function CheckoutPage() {
                       <p className="text-xs text-slate-500">Qty: {item.qty}</p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold">${(item.price * item.qty).toLocaleString()}</span>
+                  <span className="text-sm font-bold">৳{(item.price * item.qty).toLocaleString()}</span>
                 </div>
               ))}
             </div>
@@ -136,7 +136,7 @@ export default function CheckoutPage() {
             <div className="border-t border-slate-800 pt-4 space-y-2">
               <div className="flex justify-between text-slate-400">
                 <span>Subtotal</span>
-                <span>${totalPrice.toLocaleString()}</span>
+                <span>৳{totalPrice.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-slate-400">
                 <span>Shipping</span>
@@ -144,7 +144,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between text-xl font-bold pt-2">
                 <span>Total</span>
-                <span className="text-blue-500">${totalPrice.toLocaleString()}</span>
+                <span className="text-blue-500">৳{totalPrice.toLocaleString()}</span>
               </div>
             </div>
 

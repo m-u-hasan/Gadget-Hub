@@ -73,7 +73,7 @@ export default function AdminOverview() {
           </div>
           <div className="relative z-10 space-y-2">
             <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">Total Sales</p>
-            <h3 className="text-3xl font-black text-white">${stats.totalSales.toLocaleString()}</h3>
+            <h3 className="text-3xl font-black text-white">৳{stats.totalSales.toLocaleString()}</h3>
             <div className="flex items-center gap-1 text-[10px] text-blue-400 font-bold">
               <ArrowUpRight size={12} /> +12% from last month
             </div>

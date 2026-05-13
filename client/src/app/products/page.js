@@ -1,20 +1,31 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { fetchProducts } from '@/services/api';
 import ProductCard from '@/components/ProductCard';
 import { Filter, X } from 'lucide-react';
 
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
     brand: '',
-    category: '',
+    category: categoryParam || '',
     ram: '',
     storage: '',
     priceMax: '',
   });
+
+  // Update category filter when URL parameter changes
+  useEffect(() => {
+    if (categoryParam !== null) {
+      setFilters(prev => ({ ...prev, category: categoryParam }));
+    }
+  }, [categoryParam]);
 
   // Fetch products when filters change
   useEffect(() => {
@@ -59,7 +70,7 @@ export default function ProductsPage() {
             name="brand" 
             value={filters.brand} 
             onChange={handleFilterChange}
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2"
+            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-white"
           >
             <option value="">All Brands</option>
             <option value="Apple">Apple</option>
@@ -76,7 +87,7 @@ export default function ProductsPage() {
             name="category" 
             value={filters.category} 
             onChange={handleFilterChange}
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2"
+            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-white"
           >
             <option value="">All Categories</option>
             <option value="Mobile">Mobile</option>
@@ -92,7 +103,7 @@ export default function ProductsPage() {
             name="ram" 
             value={filters.ram} 
             onChange={handleFilterChange}
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2"
+            className="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-white"
           >
             <option value="">All</option>
             <option value="8GB">8GB</option>
@@ -103,7 +114,7 @@ export default function ProductsPage() {
 
         {/* Max Price Filter */}
         <div className="space-y-2">
-          <label className="text-sm text-slate-400">Max Price (${filters.priceMax || 'Any'})</label>
+          <label className="text-sm text-slate-400">Max Price (৳{filters.priceMax || 'Any'})</label>
           <input 
             type="range" 
             name="priceMax" 
@@ -137,5 +148,17 @@ export default function ProductsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex justify-center py-40">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-blue-500"></div>
+      </div>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 }

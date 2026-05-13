@@ -96,7 +96,7 @@ export default function ComparePage() {
                       <div className="text-center">
                         <p className="text-xs text-blue-500 font-bold uppercase">{p.brand}</p>
                         <p className="font-bold text-white text-lg leading-tight line-clamp-2">{p.name}</p>
-                        <p className="text-xl font-black text-white mt-2">${p.price.toLocaleString()}</p>
+                        <p className="text-xl font-black text-white mt-2">৳{p.price.toLocaleString()}</p>
                       </div>
                       <button 
                         onClick={() => { addToCart(p); router.push('/cart'); }}

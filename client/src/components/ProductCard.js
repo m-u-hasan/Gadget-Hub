@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <p className="text-xl font-bold text-white mt-auto">
-          ${product.price.toLocaleString()}
+          ৳{product.price.toLocaleString()}
         </p>
       </div>
 

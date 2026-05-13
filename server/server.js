@@ -17,7 +17,10 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Allows the server to accept JSON data in the body
-app.use(cors()); // Allows the frontend to communicate with the backend
+app.use(cors({
+  origin: process.env.FRONTEND_URL, 
+  credentials: true,
+})); 
 
 // Routes
 app.use('/api/products', productRoutes);

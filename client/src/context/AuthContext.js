@@ -23,11 +23,13 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const loginUser = (userData) => {
+  const loginUser = (userData, redirectPath = '/') => {
     setUser(userData);
     localStorage.setItem('userInfo', JSON.stringify(userData));
     API.defaults.headers.common['Authorization'] = `Bearer ${userData.token}`;
-    router.push('/');
+    if (redirectPath) {
+      router.push(redirectPath);
+    }
   };
 
   const logout = () => {

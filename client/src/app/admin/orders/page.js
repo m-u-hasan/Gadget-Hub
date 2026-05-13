@@ -103,7 +103,7 @@ export default function AdminOrders() {
 
               <div className="space-y-1">
                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Revenue</p>
-                <p className="text-lg font-black text-blue-500">${order.totalPrice.toLocaleString()}</p>
+                <p className="text-lg font-black text-blue-500">৳{order.totalPrice.toLocaleString()}</p>
               </div>
             </div>
 

@@ -18,7 +18,7 @@ export default function LoginPage() {
     setError('');
     try {
       const { data } = await loginApi(formData);
-      loginUser(data);
+      loginUser(data, data.role === 'admin' ? '/admin' : '/');
     } catch (err) {
       setError(err.response?.data?.message || 'Invalid email or password');
     } finally {

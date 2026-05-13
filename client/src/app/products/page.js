@@ -114,13 +114,13 @@ function ProductsContent() {
 
         {/* Max Price Filter */}
         <div className="space-y-2">
-          <label className="text-sm text-slate-400">Max Price (৳{filters.priceMax || 'Any'})</label>
+          <label className="text-sm text-slate-400">Max Price (৳{filters.priceMax ? Number(filters.priceMax).toLocaleString() : 'Any'})</label>
           <input 
             type="range" 
             name="priceMax" 
             min="0" 
-            max="3000" 
-            step="100"
+            max="1000000" 
+            step="1000"
             value={filters.priceMax} 
             onChange={handleFilterChange}
             className="w-full"
